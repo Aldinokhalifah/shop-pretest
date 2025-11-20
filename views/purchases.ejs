@@ -1,0 +1,30 @@
+
+<h2>Daftar Pembelian</h2>
+
+<table class="tbl">
+    <thead>
+        <tr><th>ID</th><th>Produk</th><th>Qty</th><th>Total</th><th>Buyer</th><th>Status</th><th>Waktu</th><th>Aksi</th></tr>
+    </thead>
+    <tbody>
+        <% purchases.forEach(p => { %>
+        <tr>
+            <td><%= p.id %></td>
+            <td><%= p.product_name %></td>
+            <td><%= p.quantity %></td>
+            <td><%= p.total_price %></td>
+            <td><%= p.buyer_name %></td>
+            <td><%= p.status %></td>
+            <td><%= p.created_at %></td>
+            <td>
+            <% if (p.status !== 'cancelled') { %>
+                <form method="POST" action="/purchase/cancel/<%= p.id %>" onsubmit="return confirm('Batalkan pembelian ini?');">
+                <button type="submit">Cancel</button>
+                </form>
+            <% } else { %>
+                -
+            <% } %>
+            </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>

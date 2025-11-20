@@ -1,0 +1,22 @@
+
+<h2>Input Pembelian (Admin)</h2>
+
+<form action="/purchase/create" method="POST" class="form">
+    <label>Produk
+        <select name="product_id" required>
+        <% products.forEach(p => { %>
+            <option value="<%= p.id %>"><%= p.name %> (stok: <%= p.quantity %>)</option>
+        <% }) %>
+        </select>
+    </label>
+
+    <label>Quantity
+        <input type="number" name="quantity" value="1" min="1" required>
+    </label>
+
+    <label>Nama Pembeli
+        <input type="text" name="buyer_name" placeholder="Nama pembeli (opsional)">
+    </label>
+
+    <button type="submit">Buat Pembelian</button>
+</form>
