@@ -1,11 +1,11 @@
 
-<h2>Daftar Produk</h2>
+<h2>Products List</h2>
 <table class="tbl">
     <thead>
-        <tr><th>ID</th><th>Nama</th><th>Deskripsi</th><th>Harga</th><th>Stok</th></tr>
+        <tr><th>ID</th><th>Name</th><th>Description</th><th>Price</th><th>Stock</th></tr>
     </thead>
     <tbody>
-        <% products.forEach(p => { %>
+        <% products.map(p => { %>
         <tr>
         <td><%= p.id %></td>
         <td><%= p.name %></td>
