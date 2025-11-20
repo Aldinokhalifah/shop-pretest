@@ -27,7 +27,7 @@ This project is part of a pretest task for creating a small store management sys
 ### 1. Clone Repository
 
 ```
-git clone <repository-url>
+git clone https://github.com/Aldinokhalifah/shop-pretest.git
 cd shop-pretest
 ```
 
